@@ -40,16 +40,16 @@ It features live editing, customizable sections, instant PDF download, and secur
 _See frontend/README.md and backend/README.md for details.
 
 ## ⚡ Quick Start
-Clone the repo
-git clone https://github.com/sandhyapaliwal/resume-builder-web-application.git
+- Clone the repo
+- git clone https://github.com/sandhyapaliwal/resume-builder-web-application.git
 
-Frontend setup
-cd resume-builder-web-application/frontend
-npm install
-npm run dev
+-Frontend setup
+-cd resume-builder-web-application/frontend
+-npm install
+-npm run dev
 
-Backend setup (Strapi)
-cd ../backend
-npm install
-npm run develop
+-Backend setup (Strapi)
+-cd ../backend
+-npm install
+-npm run develop
 
