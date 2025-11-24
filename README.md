@@ -36,23 +36,6 @@ It features live editing, customizable sections, instant PDF download, and secur
 
 ---
 
-## 📁 Folder Structure
-
-resume-builder-web-application/
-│
-├── frontend/ # React app, UI/UX
-│ ├── src/
-│ ├── public/
-│ ├── README.md
-├── backend/ # Strapi REST API
-│ ├── src/
-│ ├── config/
-│ ├── public/uploads/
-│ ├── README.md
-├── README.md # Project overview (this file)
-
-
-
 ## 
 _See frontend/README.md and backend/README.md for details.
 
