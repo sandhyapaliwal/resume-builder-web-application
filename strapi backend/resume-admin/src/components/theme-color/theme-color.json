@@ -1,0 +1,11 @@
+{
+  "collectionName": "components_theme_color_theme_colors",
+  "info": { "displayName": "Theme Color" },
+  "options": {},
+  "attributes": {
+    "color": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType", 
+  "collectionName": "user_resumes",
+  "info": {
+    "singularName": "user-resume",
+    "pluralName": "user-resumes",
+    "displayName": "User Resume" 
+  },
+  "options": {
+    "draftAndPublish": false 
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "resumeId": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "summery": {
+      "type": "text"
+    },
+    "experience": {
+      "type": "component",
+      "component": "experience.experience",
+      "repeatable": true
+    },
+    "education": {
+      "type": "component",
+      "component": "education.education",
+      "repeatable": true
+    },
+    "projects": {
+      "type": "component",
+      "component": "projects.projects",
+      "repeatable": true
+    },
+    "jobTitle": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "github": {
+      "type": "string"
+    },
+    "skills": {
+      "type": "text"
+    },
+    "resumeTitle": {
+      "type": "string",
+      "required": true
+    },
+    "candidateName": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

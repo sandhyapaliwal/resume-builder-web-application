@@ -1,0 +1,160 @@
+/* Container for the resume preview area; styled for A4 page size at 96 dpi */
+.resume-preview {
+  width: 794px;     /*a4 size*/         
+  min-height: 1123px;
+  margin: 40px auto;         /* Vertically separated by 40px,auto= horizontally centered */
+  background: #f3f4f6;      
+  border: none;              
+  border-radius: 8px;        /* Rounded corners with 8px radius */
+  box-shadow: none;          
+  padding: 48px 56px;        /* Top-bottom padding 48px, left-right 56px */
+  box-sizing: border-box;    /* Include padding and border in width/height calculations */
+  display: flex;             /* Use flexbox for layout */
+  flex-direction: column;    /* Vertical stacking of child elements */
+  gap: 6px;                 /* 6px gap between flex children */
+  font-size: 16px;           
+  color: #333;               
+  overflow: hidden;          /* Hide overflow content */
+  word-wrap: break-word;     /* Break long words to next line if needed */
+  word-break: break-word;    /* Break words when wrapping */
+  white-space: pre-line;     /* Preserve line breaks, but collapse other whitespace */
+}
+
+/* Apply styles to all elements inside resume-preview for consistent text wrapping */
+.resume-preview *,
+.resume-preview *:before,
+.resume-preview *:after {
+  box-sizing: border-box;        /* Ensure padding/border counted for width */
+  max-width: 100% !important;    /* Prevent children from exceeding container width */
+  overflow-wrap: break-word !important; /* Force line breaks inside words */
+  word-break: break-word !important;    /* Break words if too long */
+  white-space: pre-line;         /* Preserve line breaks */
+}
+
+/* Styling for section headers inside resume preview */
+.resume-section-header {
+  font-size: 1.24rem;   
+  font-weight: 700;       
+  margin: 0 0 4px 0;      
+  text-transform: uppercase; 
+  line-height: 1.2;       
+}
+
+/* Underline bar below section headers, styled visually */
+.resume-section-underline {
+  display: block;         /* Make underline a block to control size */
+  height: 3px !important; 
+  width: 100% !important; 
+  margin: 0 0 14px 0 !important; 
+  border-radius: 3px !important; 
+  background: themeColor !important; 
+}
+
+/* Style for each entry (e.g., experience, education) within a section */
+.section-entry {
+  margin-bottom: 4px;            /* Space below each entry */
+  padding-bottom: 8px;            /* Padding inside bottom */
+  border-bottom: 1px solid #ececec; /* Light gray border separating entries */
+}
+
+/* Row container for section content: flexbox for layout */
+.section-row {
+  display: flex;                 /* Use flexbox */
+  justify-content: space-between; /* Push content to edges */
+  flex-wrap: wrap;              /* Allow wrapping on small widths */
+  align-items: center;          /* Vertically center items */
+  margin-bottom: 2px;           /* Small bottom margin */
+  gap: 8px;                    /* Gap between items */
+}
+
+/* Title text inside a section (e.g., job title, degree) */
+.section-title {
+  font-weight: 600;             /* Semi-bold font for title */
+  font-size: 1.06rem;           /* Slightly larger font */
+  flex: 1 1 auto;               /* Flexible width */
+  min-width: 0;                 /* Prevent overflow */
+  overflow: hidden;             /* Hide overflow */
+  text-overflow: ellipsis;      /* Show ellipsis if text too long */
+  white-space: pre-line;        /* Preserve line breaks */
+  color: #333;                  /* Dark gray text */
+}
+
+/* Date or time period for section entries */
+.section-date {
+  font-size: 0.875rem;          /* Smaller font size */
+  font-weight: 700;             /* Bold font */
+  font-family: sans-serif;      /* Use sans serif font */
+  white-space: nowrap;          /* Prevent line breaks */
+  flex-shrink: 0;               /* Do not shrink */
+  margin-left: 12px;            /* Left margin to separate from title */
+}
+
+/* Description text providing details about entry */
+.section-description {
+  margin-top: 6px;              /* Small top margin */
+  font-size: 1rem;              /* Normal font size */
+  color: #333;                  /* Dark gray text */
+  line-height: 1.45;            /* Comfortable line height */
+  font-weight: 400;             /* Regular font weight */
+  padding-right: 2px;           /* Slight right padding */
+  word-break: break-word;       /* Break words to prevent overflow */
+  overflow-wrap: break-word;   /* Allow wrapping inside words */
+}
+
+/* ======= Print specific styles: only print the resume preview and style it ======= */
+/*media print is used for hiding elements with .no-print, ensuring colors and underlines print correctly, and sets page size and margins for print-friendly layout.*/
+@media print { 
+  /* Hide elements marked with .no-print */
+  .no-print {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Print styling for the underline bar under section headers */
+  .resume-section-underline {
+    display: block !important;
+    min-height: 3px !important;
+    height: 3px !important;
+    width: 100% !important;
+    /* fallback solid color for printing (React inline styles override this) */
+    border-radius: 2px !important;
+    margin: 0 0 14px 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    /* Ensure color prints exactly */
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    content: ' ' !important;     /* Force element to print with content */
+  }
+}
+
+/* Guarantee underlines print as solid bars (reiterated for robustness) */
+.resume-section-underline {
+  display: block !important;
+  height: 3px !important;
+  width: 100% !important;
+  background: themecolor !important; /* Fallback print color (overridden inline) */
+  border-radius: 3px !important;
+  margin: 0 0 14px 0 !important;
+  box-shadow: none !important;
+}
+
+/* Define page size and margins for printing */
+@page {
+  size: A4;         /* Set page size to A4 for printing */
+  margin: 0mm;      /* Remove default margins for edge-to-edge printing */
+}
+
+/* Prevent resume sections from splitting across pages */
+.resume-section {
+  page-break-inside: avoid;
+}
+
+/* Body styling outside resume preview */
+body {
+  background: linear-gradient(135deg, #091c44 0%, #2579db 55%, #75e5fa 100%); /* Gradient background */
+  font-family: 'Inter', sans-serif;    /* Use Inter font, fallback to sans-serif */
+  color: #1e293b;                      /* Dark text color */
+  margin: 0;                           /* Remove default body margin */
+  padding: 0;                          /* Remove default body padding */
+}

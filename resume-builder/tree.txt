@@ -1,0 +1,82 @@
+ai-resume-builder
+├── .env.local
+├── .gitignore
+├── README.md
+├── components.json
+├── eslint.config.js
+├── generateTree.cjs
+├── index.html
+├── jsconfig.json
+├── package-lock.json
+├── package.json
+├── postcss.config.cjs
+├── public
+│   ├── cv.jpg
+│   ├── logo.svg
+│   └── vite.svg
+├
+├── src
+│   ├── App.css
+│   ├── App.jsx
+│   ├── assets
+│   │   └── react.svg
+│   ├── auth
+│   │   └── sign-in
+│   │       └── index.jsx
+│   ├── components
+│   │   ├── custom
+│   │   │   └── Header.jsx
+│   │   └── ui
+│   │       ├── alert-dialog.jsx
+│   │       ├── button.jsx
+│   │       ├── dialog.jsx
+│   │       ├── dropdown-menu.jsx
+│   │       ├── input.jsx
+│   │       ├── popover.jsx
+│   │       ├── sonner.jsx
+│   │       └── textarea.jsx
+│   ├── context
+│   │   └── ResumeInfoContext.jsx
+│   ├── dashboard
+│   │   ├── components
+│   │   │   ├── AddResume.jsx
+│   │   │   └── ResumeCardItem.jsx
+│   │   ├── index.jsx
+│   │   └── resume
+│   │       ├── [resumeId]
+│   │       │   └── edit
+│   │       │       └── index.jsx
+│   │       └── components
+│   │           ├── FormSection.jsx
+│   │           ├── ResumePreview.jsx
+│   │           ├── RichTextEditor.jsx
+│   │           ├── ThemeColor.jsx
+│   │           ├── forms
+│   │           │   ├── Education.jsx
+│   │           │   ├── Experience.jsx
+│   │           │   ├── PersonalDetail.jsx
+│   │           │   ├── Skills.jsx
+│   │           │   └── Summery.jsx
+│   │           └── preview
+│   │               ├── EducationalPreview.jsx
+│   │               ├── ExperiencePreview.jsx
+│   │               ├── PersonalDetailPreview.jsx
+│   │               ├── SkillsPreview.jsx
+│   │               └── SummeryPreview.jsx
+|   |--service
+│   | ├── AIModal.js
+│   | └── GlobalApi.js
+│   ├── data
+│   │   └── dummy.jsx
+│   ├── home
+│   │   └── index.jsx
+│   ├── index.css
+│   ├── lib
+│   │   └── utils.js
+│   ├── main.jsx
+│   └── my-resume
+│       └── [resumeId]
+│           └── view
+│               └── index.jsx
+├── tailwind.config.cjs
+└── vite.config.cjs

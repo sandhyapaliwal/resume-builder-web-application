@@ -1,0 +1,137 @@
+/* Import Tailwind CSS base, component, and utility styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Print media query styles for print-specific behavior */
+@media print {
+  /* Hide element with ID 'no-print' when printing */
+  #no-print {
+    display: none;
+  }
+
+  /* Show element with ID 'print-area' when printing */
+  #print-area {
+    display: block;
+  }
+
+  /* Remove margin, padding and box shadow from body for clean print */
+  body {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+}
+
+/* Define page size and margin for printing */
+@page {
+  size: auto;     /* Use auto size - user agent decides */
+  margin: 0mm;    /* Remove default margins for edge-to-edge printing */
+}
+
+/* Styling unordered lists inside elements with class .rsw-ce */
+.rsw-ce ul {
+  list-style: disc;       /* Use disc bullet points */
+  padding-left: 2em;      /* Add padding on the left for indentation */
+}
+
+/* Styling ordered lists inside elements with class .rsw-ce */
+.rsw-ce ol {
+  list-style: decimal;    /* Use decimal numbering */
+  padding-left: 2em;      /* Add padding on the left for indentation */
+}
+
+/* Reset list styles and margins for ol, ul, and menu elements globally */
+ol, ul, menu {
+  list-style: disc;   /* Default to discs for list bullets */
+  margin: 0;          /* Remove default margin */
+  padding: 0;         /* Remove default padding */
+}
+
+/* Define CSS Variables and theme colors using Tailwind's base layer */
+@layer base {
+  :root {
+    /* Light mode color palette using HSL values */
+    --background: 0 0% 100%;           /* White background */
+    --foreground: 0 0% 3.9%;           /* Very dark text */
+
+    --card: 0 0% 100%;                 /* Card background (white) */
+    --card-foreground: 0 0% 3.9%;      /* Card text color */
+
+    --popover: 0 0% 100%;              /* Popover background */
+    --popover-foreground: 0 0% 3.9%;   /* Popover text */
+
+    --primary: 0 0% 9%;                /* Primary color (dark gray) */
+    --primary-foreground: 0 0% 98%;   /* Primary foreground (near white) */
+
+    --secondary: 0 0% 96.1%;           /* Secondary color (light gray) */
+    --secondary-foreground: 0 0% 9%;   /* Secondary foreground (dark text) */
+
+    --muted: 0 0% 96.1%;               /* Muted color for backgrounds */
+    --muted-foreground: 0 0% 45.1%;    /* Muted text color */
+
+    --accent: 0 0% 96.1%;              /* Accent color for highlights */
+    --accent-foreground: 0 0% 9%;      /* Accent text */
+
+    --destructive: 0 84.2% 60.2%;      /* Destructive color (red) */
+    --destructive-foreground: 0 0% 98%;/* Destructive text color */
+
+    --border: 0 0% 89.8%;              /* Border color */
+    --input: 0 0% 89.8%;               /* Input background color */
+    --ring: 0 0% 3.9%;                 /* Ring color (focus outlines) */
+
+    --radius: 0.5rem;                  /* Border radius unit */
+  }
+
+  /* Dark mode colors for elements with class .dark */
+  .dark {
+    --background: 0 0% 3.9%;          /* Dark background */
+    --foreground: 0 0% 98%;           /* Light foreground text */
+
+    --card: 0 0% 3.9%;                /* Card background in dark */
+    --card-foreground: 0 0% 98%;      /* Card text light */
+
+    --popover: 0 0% 3.9%;             /* Popover background dark */
+    --popover-foreground: 0 0% 98%;   /* Popover text light */
+
+    --primary: 0 0% 98%;              /* Primary color light */
+    --primary-foreground: 0 0% 9%;    /* Primary foreground dark */
+
+    --secondary: 0 0% 14.9%;          /* Secondary dark shade */
+    --secondary-foreground: 0 0% 98%; /* Secondary text light */
+
+    --muted: 0 0% 14.9%;              /* Muted dark */
+    --muted-foreground: 0 0% 63.9%;   /* Muted text gray */
+
+    --accent: 0 0% 14.9%;             /* Accent dark */
+    --accent-foreground: 0 0% 98%;    /* Accent text light */
+
+    --destructive: 0 62.8% 30.6%;     /* Destructive dark red */
+    --destructive-foreground: 0 0% 98%; /* Destructive text light */
+
+    --border: 0 0% 14.9%;             /* Border dark */
+    --input: 0 0% 14.9%;              /* Input background dark */
+    --ring: 0 0% 83.1%;               /* Ring color */
+  }
+}
+
+/* Apply border colors and background/text colors globally in base layer */
+@layer base {
+  /* Apply border color to all elements */
+  * {
+    @apply border-border;
+  }
+  /* Apply background and text color to body */
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Additional manual styling for body */
+body {
+  background: linear-gradient(135deg, #091c44 0%, #2579db 55%, #75e5fa 100%);  /* Blue gradient background */
+  font-family: 'Inter', sans-serif;  /* Use "Inter" font, fallback to sans-serif */
+  color: #1e293b;                    /* Dark blue-gray text */
+  margin: 0;                         /* Remove default margin */
+  padding: 0;                        /* Remove default padding */
+}
