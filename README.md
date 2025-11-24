@@ -44,11 +44,13 @@ _See frontend/README.md and backend/README.md for details.
 - git clone https://github.com/sandhyapaliwal/resume-builder-web-application.git
 
 # Frontend setup
+
 -cd resume-builder-web-application/frontend
 -npm install
 -npm run dev
 
 # Backend setup (Strapi)
+
 -cd ../backend
 -npm install
 -npm run develop
