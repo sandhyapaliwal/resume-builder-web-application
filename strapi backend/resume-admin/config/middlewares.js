@@ -5,9 +5,10 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
+      enabled: true,
       origin: ['https://resume-builder-web-application.netlify.app'], 
-      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-      headers: ['Content-Type', 'Authorization'],
+      methods: ['GET', 'POST', 'PUT', 'PATCH' ,'DELETE', 'OPTIONS'],
+      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
     },
   },
   'strapi::poweredBy',
