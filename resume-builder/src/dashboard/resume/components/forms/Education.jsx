@@ -122,7 +122,8 @@ const removeEducation = () => {
         ({ id, startDate, endDate, ...rest }) => ({
           ...rest,
           startDate: startDate ? startDate.toISOString().split("T")[0] : null, //startDate is a Date object. If it exists, it converts it to an ISO string, e.g., "2025-08-22T00:00:00.000Z". .split("T") extracts the date part only (i.e., "2025-08-22"), removing the time portion.
-          endDate: endDate ? endDate.toISOString().split("T") : null,
+          endDate: endDate ? endDate.toISOString().split("T")[0] : null,
+
         })
       ),
     };
