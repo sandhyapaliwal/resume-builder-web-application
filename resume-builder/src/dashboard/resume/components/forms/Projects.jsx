@@ -64,11 +64,15 @@ import ThemeColor from "../ThemeColor";
      // Prepare the payload for API request
     // Add __component field for each entry as required by Strapi repeatable component
     const dataPayload = {
-      projects: projects.map(project => ({
-        __component: "projects.projects",
-        ...project,
-      })),
-    };
+  projects: projects.map(project => ({
+    __component: "projects.projects",
+    ...project,
+    completiondate: project.completiondate
+      ? new Date(project.completiondate).toISOString().split("T")[0]
+      : null,
+  })),
+};
+
 
     GlobalApi.PatchResumeByResumeId(resumeId, dataPayload)
       .then(() => {
